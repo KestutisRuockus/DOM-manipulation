@@ -37,20 +37,38 @@ img {
   align-items: center;
 }
 
-svg {
-  opacity: 0.3;
-}
-
 .title {
   color: lightskyblue;
   font-weight: bold;
 }
 
-.rating {
+.rating-outer {
   display: inline-block;
   margin-bottom: 40px;
+  position: relative;
 }
 
+.rating-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+.rating-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.rating-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: orange;
+}
 .description {
   line-height: 18px;
 }
